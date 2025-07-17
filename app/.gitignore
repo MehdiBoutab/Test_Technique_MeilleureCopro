@@ -1,0 +1,51 @@
+# Environnement virtuel
+venv/
+env/
+ENV/
+
+# Fichiers Python compilés
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Fichiers de logs
+*.log
+
+# Fichiers de configuration d'éditeur
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# MacOS
+.DS_Store
+
+# Fichiers de base de données SQLite (si utilisé)
+*.sqlite3
+
+# Caches et fichiers temporaires
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environnement dotenv
+.env
+
+# Coverage reports
+htmlcov/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Pytest cache
+.pytest_cache/
+
+
+app/dataset_annonces.csv

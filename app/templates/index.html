@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Statistiques MeilleureCopro</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+<main>
+    <h1>Statistiques Charges de Copropriété</h1>
+
+    <form method="post" action="/">
+        <label for="filtre">Filtrer par :</label>
+        <select name="filtre" id="filtre" required>
+            <option value="DEPT_CODE" {% if filtre == "DEPT_CODE" %}selected{% endif %}>Département</option>
+            <option value="CITY" {% if filtre == "CITY" %}selected{% endif %}>Ville</option>
+            <option value="ZIP_CODE" {% if filtre == "ZIP_CODE" %}selected{% endif %}>Code postal</option>
+        </select>
+
+        <input
+            type="text"
+            name="valeur"
+            id="valeur"
+            placeholder="Entrez la valeur"
+            required
+            value="{{ valeur if valeur else '' }}"
+        />
+
+        <button type="submit">Afficher les statistiques</button>
+    </form>
+
+    {% if erreur %}
+        <div class="erreur">{{ erreur }}</div>
+    {% endif %}
+
+    {% if resultats %}
+    <div class="resultats">
+        <p><strong>Moyenne des charges :</strong> {{ resultats.moyenne | round(2) }} €</p>
+        <p><strong>Quantile 10% :</strong> {{ resultats.quantile_10 | round(2) }} €</p>
+        <p><strong>Quantile 90% :</strong> {{ resultats.quantile_90 | round(2) }} €</p>
+    </div>
+    {% endif %}
+
+    <p style="margin-top: 30px; text-align:center;">
+        <a href="/add-annonce">&larr; Ajouter une annonce Bienici</a>
+    </p>
+</main>
+</body>
+</html>

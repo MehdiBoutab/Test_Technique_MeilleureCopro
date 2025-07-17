@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ajouter une annonce Bienici</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+<main>
+    <h1>Ajouter une annonce Bienici</h1>
+
+    <form method="post" action="/add-annonce">
+        <label for="url_annonce">URL de l'annonce :</label>
+        <input
+            type="url"
+            id="url_annonce"
+            name="url_annonce"
+            placeholder="https://www.bienici.com/annonce/vente/..."
+            required
+        />
+
+        <button type="submit">Ajouter l'annonce</button>
+    </form>
+
+    {% if erreur %}
+        <div class="message error">{{ erreur }}</div>
+    {% endif %}
+
+    {% if message %}
+        <div class="message success">{{ message }}</div>
+    {% endif %}
+
+    <p style="margin-top: 30px; text-align:center;">
+        <a href="/">&larr; Retour aux statistiques</a>
+    </p>
+</main>
+</body>
+</html>
