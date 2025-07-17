@@ -55,10 +55,19 @@ L’API sera accessible à l’adresse : http://127.0.0.1:8000
 
 - **`main.py`** : point d’entrée FastAPI.
 - **`api.py`** : définition des routes et logique API.
-- **`loader.py`** : chargement du dataset initial.
-- **`parser.py`** : fonctions utilitaires pour le parsing et les calculs.
-- **`static/`** : fichiers CSS et JS pour l’interface web.
-- **`templates/`** : fichiers HTML 
+- **`core`**
+  - **`data_handler.py`** : classe(s) pour gérer le chargement et la manipulation des données.
+  - **`loader.py`** : chargement du dataset initial.
+  - **`parser.py`** : fonctions utilitaires pour le parsing et les calculs.
+- **`static/`** 
+  - **`css`**
+    - **`style.css`** : fichiers CSS pour l’interface web.
+- **`templates/`** : 
+  - **`index.html`**, **`add_annonce.html`** : fichiers HTML pour l’interface utilisateur.
+- **`dataset_annonces.csv`** : (local uniquement – à ignorer dans Git).
+- **`.gitignore`** : pour exclure le CSV et les fichiers inutiles.
+- **`README.md`**
+
 
 ## Tests et validation
 
